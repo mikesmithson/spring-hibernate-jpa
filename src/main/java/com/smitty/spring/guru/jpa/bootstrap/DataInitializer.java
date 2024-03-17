@@ -20,10 +20,12 @@ public class DataInitializer implements CommandLineRunner {
         bookRepository.deleteAll();
         Book functionalKotlin = new Book();
         functionalKotlin.setTitle("Functional Kotlin");
+        functionalKotlin.setIsbn("123456");
         functionalKotlin.setPublisher("LeanPub");
 
         Book coroutines = new Book();
         coroutines.setTitle("Kotlin Coroutines");
+        coroutines.setIsbn("654321");
         coroutines.setPublisher("LeanPub");
 
         List<Book> savedBooks = bookRepository.saveAll(List.of(functionalKotlin, coroutines));
