@@ -29,6 +29,6 @@ public class DataInitializer implements CommandLineRunner {
         coroutines.setPublisher("LeanPub");
 
         List<Book> savedBooks = bookRepository.saveAll(List.of(functionalKotlin, coroutines));
-        savedBooks.forEach(book -> System.out.println(book.getId() + "- " + book.getTitle()));
+        savedBooks.forEach(book -> System.out.println(String.join(" ", "Book Id:", String.valueOf(book.getId()), "-",book.getTitle())));
     }
 }
